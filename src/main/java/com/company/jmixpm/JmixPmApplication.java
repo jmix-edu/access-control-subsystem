@@ -20,16 +20,16 @@ import org.springframework.core.env.Environment;
 import javax.sql.DataSource;
 
 @Push
-@Theme(value = "access-control-subsystem")
+@Theme(value = "jmixpm")
 @PWA(name = "Access Control Subsystem", shortName = "Access Control Subsystem")
 @SpringBootApplication
-public class AccessControlSubsystemApplication implements AppShellConfigurator {
+public class JmixPmApplication implements AppShellConfigurator {
 
     @Autowired
     private Environment environment;
 
     public static void main(String[] args) {
-        SpringApplication.run(AccessControlSubsystemApplication.class, args);
+        SpringApplication.run(JmixPmApplication.class, args);
     }
 
     @Bean
@@ -48,7 +48,7 @@ public class AccessControlSubsystemApplication implements AppShellConfigurator {
 
     @EventListener
     public void printApplicationUrl(final ApplicationStartedEvent event) {
-        LoggerFactory.getLogger(AccessControlSubsystemApplication.class).info("Application started at "
+        LoggerFactory.getLogger(JmixPmApplication.class).info("Application started at "
                 + "http://localhost:"
                 + environment.getProperty("local.server.port")
                 + Strings.nullToEmpty(environment.getProperty("server.servlet.context-path")));

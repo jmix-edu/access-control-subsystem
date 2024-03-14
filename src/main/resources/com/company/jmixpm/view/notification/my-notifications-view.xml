@@ -3,8 +3,7 @@
       title="msg://myNotificationsView.title">
     <data>
         <collection id="notificationsDc" class="com.company.jmixpm.entity.Notification">
-            <fetchPlan extends="_base">
-            </fetchPlan>
+            <fetchPlan extends="_base"/>
             <loader id="notificationsDl">
                 <query>
                     <![CDATA[select e from Notification e

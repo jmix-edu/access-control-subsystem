@@ -21,7 +21,7 @@ import io.jmix.flowui.view.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Route(value = "quick-add-time-entry-dialog", layout = MainView.class)
-@ViewController("QuickAddTimeEntryDialog")
+@ViewController("QuickAddTimeEntry")
 @ViewDescriptor("quick-add-time-entry-dialog.xml")
 @DialogMode(width = "30em")
 public class QuickAddTimeEntryDialog extends StandardView {

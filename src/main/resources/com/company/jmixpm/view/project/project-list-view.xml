@@ -48,7 +48,7 @@
                 <action id="create" type="list_create"/>
                 <action id="edit" type="list_edit"/>
                 <action id="remove" type="list_remove"/>
-                <action id="archive" text="msg://projectsDataGrid.archive.text"/>
+                <action id="archive" text="msg://projectsDataGrid.archive.text" type="list_itemTracking"/>
             </actions>
             <columns resizable="true">
                 <column property="name"/>

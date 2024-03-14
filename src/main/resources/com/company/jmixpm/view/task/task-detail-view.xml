@@ -29,7 +29,7 @@
                 </actions>
             </entityPicker>
             <dateTimePicker id="startDateField" property="startDate"/>
-            <textField id="estimatedEffortsField" property="estimatedEfforts" required="true"/>
+            <textField id="estimatedEffortsField" property="estimatedEfforts"/>
             <entityPicker id="projectField" property="project">
                 <actions>
                     <action id="entityLookup" type="entity_lookup"/>

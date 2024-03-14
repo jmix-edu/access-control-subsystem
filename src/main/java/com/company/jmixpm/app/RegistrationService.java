@@ -2,9 +2,9 @@ package com.company.jmixpm.app;
 
 import com.company.jmixpm.entity.User;
 import io.jmix.email.EmailException;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Nullable;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component

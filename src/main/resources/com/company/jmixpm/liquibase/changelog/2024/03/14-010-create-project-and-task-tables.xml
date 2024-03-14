@@ -34,6 +34,7 @@
             </column>
             <column name="START_DATE" type="DATETIME"/>
             <column name="ESTIMATED_EFFORTS" type="INT"/>
+            <column name="CLOSED" type="BOOLEAN"/>
             <column name="PROJECT_ID" type="UUID">
                 <constraints nullable="false"/>
             </column>

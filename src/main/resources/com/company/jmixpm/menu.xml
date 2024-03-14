@@ -7,7 +7,7 @@
         <item view="Project.list" title="msg://com.company.jmixpm.view.project/projectListView.title"/>
         <item view="TimeEntry.list" title="msg://com.company.jmixpm.view.timeentry/timeEntryListView.title"/>
         <item view="Notification.list" title="msg://com.company.jmixpm.view.notification/notificationListView.title"/>
-        <item view="MyNotificationsView" title="msg://com.company.jmixpm.view.notification/myNotificationsView.title"/>
+        <item view="MyNotifications" title="msg://com.company.jmixpm.view.notification/myNotificationsView.title"/>
         <item view="Document.list" title="msg://com.company.jmixpm.view.document/documentListView.title"/>
     </menu>
 

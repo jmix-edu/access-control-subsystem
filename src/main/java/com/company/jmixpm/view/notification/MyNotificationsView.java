@@ -14,8 +14,8 @@ import io.jmix.flowui.model.CollectionLoader;
 import io.jmix.flowui.view.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@Route(value = "my-notifications-view", layout = MainView.class)
-@ViewController("MyNotificationsView")
+@Route(value = "my-notifications", layout = MainView.class)
+@ViewController("MyNotifications")
 @ViewDescriptor("my-notifications-view.xml")
 public class MyNotificationsView extends StandardView {
     @ViewComponent

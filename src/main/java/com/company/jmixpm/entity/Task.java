@@ -5,7 +5,6 @@ import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.entity.annotation.OnDeleteInverse;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
-import io.jmix.core.metamodel.annotation.JmixProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -45,6 +44,17 @@ public class Task {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Project project;
 
+    @Column(name = "CLOSED")
+    private Boolean closed = false;
+
+    public Boolean getClosed() {
+        return closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
+    }
+
     public User getAssignee() {
         return assignee;
     }
@@ -59,11 +69,6 @@ public class Task {
 
     public void setProject(Project project) {
         this.project = project;
-    }
-
-    @JmixProperty
-    public Boolean getAllDay() {
-        return true;
     }
 
     public Integer getEstimatedEfforts() {

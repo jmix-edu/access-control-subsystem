@@ -34,7 +34,6 @@ import java.util.stream.Collectors;
 @ViewController("LoginView")
 @ViewDescriptor("login-view.xml")
 public class LoginView extends StandardView implements LocaleChangeObserver {
-
     private static final Logger log = LoggerFactory.getLogger(LoginView.class);
 
     @Autowired

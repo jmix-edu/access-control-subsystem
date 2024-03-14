@@ -8,9 +8,13 @@ import io.jmix.core.metamodel.annotation.DependsOnProperties;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import io.jmix.security.authentication.JmixUserDetails;
-import org.springframework.security.core.GrantedAuthority;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.time.OffsetDateTime;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.UUID;
@@ -23,7 +27,7 @@ import java.util.UUID;
 public class User implements JmixUserDetails, HasTimeZone {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     @JmixGeneratedValue
     private UUID id;
 
@@ -54,6 +58,20 @@ public class User implements JmixUserDetails, HasTimeZone {
 
     @Column(name = "TIME_ZONE_ID")
     protected String timeZoneId;
+
+    @Column(name = "NEEDS_ACTIVATION")
+    private Boolean needsActivation;
+
+    @Column(name = "ACTIVATION_TOKEN")
+    private String activationToken;
+
+    @CreatedBy
+    @Column(name = "CREATED_BY")
+    private String createdBy;
+
+    @CreatedDate
+    @Column(name = "CREATED_DATE")
+    private OffsetDateTime createdDate;
 
     @Transient
     protected Collection<? extends GrantedAuthority> authorities;
@@ -121,6 +139,38 @@ public class User implements JmixUserDetails, HasTimeZone {
 
     public void setLastName(final String lastName) {
         this.lastName = lastName;
+    }
+
+    public Boolean getNeedsActivation() {
+        return needsActivation;
+    }
+
+    public void setNeedsActivation(Boolean needsActivation) {
+        this.needsActivation = needsActivation;
+    }
+
+    public String getActivationToken() {
+        return activationToken;
+    }
+
+    public void setActivationToken(String activationToken) {
+        this.activationToken = activationToken;
+    }
+
+    public OffsetDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(OffsetDateTime createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
     @Override
