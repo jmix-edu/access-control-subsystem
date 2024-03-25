@@ -10,6 +10,7 @@ import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 import io.jmix.core.LoadContext;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.model.CollectionContainer;
@@ -19,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@AnonymousAllowed
 @Route(value = "projects-dashboard")
 @ViewController("ProjectsDashboardView")
 @ViewDescriptor("projects-dashboard.xml")
