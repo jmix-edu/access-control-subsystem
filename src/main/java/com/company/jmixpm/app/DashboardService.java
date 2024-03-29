@@ -26,6 +26,7 @@ public class DashboardService {
         List<Project> projects = dataManager.load(Project.class)
                 .all()
                 .fetchPlan(builder -> builder.addFetchPlan(FetchPlan.BASE)
+                        .add("manager", FetchPlan.BASE)
                         .add("tasks", tasksBuilder -> tasksBuilder.addFetchPlan(FetchPlan.BASE)))
                 .list();
 
@@ -34,6 +35,7 @@ public class DashboardService {
                     DashboardProject dProject = dataManager.create(DashboardProject.class);
                     dProject.setId(project.getId());
                     dProject.setName(project.getName());
+                    dProject.setManagerUsername(project.getManager().getUsername());
                     dProject.setManagerFirstName(project.getManager().getFirstName());
                     dProject.setManagerLastName(project.getManager().getLastName());
                     dProject.setEfficiency(RandomUtils.nextInt(5, 100));
