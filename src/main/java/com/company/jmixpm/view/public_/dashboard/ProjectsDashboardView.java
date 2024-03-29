@@ -5,12 +5,12 @@ import com.company.jmixpm.entity.dashboard.DashboardProject;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.core.LoadContext;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.model.CollectionContainer;
@@ -53,9 +53,12 @@ public class ProjectsDashboardView extends StandardView {
             card.setWidth("20em");
             card.setHeight("20em");
 
-            Icon icon = VaadinIcon.USER_STAR.create();
-            icon.setSize("100%");
-            card.add(icon);
+            Image image = new Image();
+            image.addClassName(LumoUtility.AlignSelf.CENTER);
+            image.setWidth("12em");
+            image.setHeight("12em");
+            image.setSrc(String.format("public/images/%s.png", p.getManagerUsername()));
+            card.add(image);
 
             Span firstNameSpan = uiComponents.create(Span.class);
             firstNameSpan.setText(messageBundle.formatMessage("firstName", p.getManagerFirstName()));

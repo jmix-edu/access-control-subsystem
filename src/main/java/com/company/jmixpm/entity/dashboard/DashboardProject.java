@@ -26,6 +26,8 @@ public class DashboardProject {
 
     private String managerLastName;
 
+    private String managerUsername;
+
     private Integer efficiency;
 
     public void setEfficiency(Integer efficiency) {
@@ -50,6 +52,14 @@ public class DashboardProject {
 
     public void setManagerFirstName(String managerFirstName) {
         this.managerFirstName = managerFirstName;
+    }
+
+    public String getManagerUsername() {
+        return managerUsername;
+    }
+
+    public void setManagerUsername(String managerUsername) {
+        this.managerUsername = managerUsername;
     }
 
     public Integer getActualEfforts() {
